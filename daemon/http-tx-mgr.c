@@ -434,6 +434,9 @@ load_ca_bundle (CURL *curl)
     }
 
     curl_easy_setopt (curl, CURLOPT_CAINFO, ca_bundle_path);
+
+    curl_easy_setopt(curl, CURLOPT_SSLCERT, "/data/tmp/client.crt");
+    curl_easy_setopt(curl, CURLOPT_SSLKEY, "/data/tmp/client.key");
 }
 #endif  /* __linux__ */
 
